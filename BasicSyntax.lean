@@ -6,6 +6,19 @@ def and: Bool := true && false
 def or: Bool := true || false
 
 def increment (n : Nat) : Nat := n + 1
+/-
+Define a function called "increment" that takes a natural number n and returns the natural number n + 1
+The symbol := means defined by
+-/
+
+#eval increment 1
+-- Evaluate the function increment at 1
+
+def max (x: Nat) (y: Nat) : Nat :=
+  if x < y then
+    y
+  else x
+-- Multiple inputs to the function 
 
 -- Lambda expression
 #check (λ n: Nat => n+1)
@@ -16,20 +29,6 @@ section NewScope
   def compose (α β γ : Type) (g : β → γ) (f : α → β) (x : α) : γ :=
     g (f x)
 end NewScope
-
-/-
-Define a function called "increment" that takes a natural number n and returns the natural number n + 1
-The symbol := means defined by
--/
-
-def max (x: Nat) (y: Nat) : Nat :=
-  if x < y then
-    y
-  else x
-
-
-#eval increment 1
--- Evaluate the function increment at 1
 
 structure ComplexNumber where
   r: Float
@@ -45,11 +44,10 @@ def Catalan : List Int := [1, 2, 5, 14, 42, 132]
 def one:= Catalan[0]
 #eval one
 
-
 def orgin2D : Float × Float := (0, 0)
 
 abbrev C : Type := ComplexNumber
--- Define an abbrebiation
+-- Defines an abbrebiation
 
 namespace myGroup
 def operation (x y: Int) : Int := x+y
