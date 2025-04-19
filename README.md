@@ -30,8 +30,12 @@ Here the [lake](https://github.com/leanprover/lean4/blob/master/src/lake/README.
 
 
 ```bash
-# build project
 cd learn_lean
+
+# get prebuilt Mathlib
+lake exe cache get
+
+# build project
 lake build
 ```
 
